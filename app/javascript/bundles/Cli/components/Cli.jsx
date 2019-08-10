@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Messages from './Messages'
+import { excuteCommand } from '../actions/axios-request';
 import {
   Container, Header, Form, Feed
 } from 'semantic-ui-react'
@@ -25,7 +25,6 @@ export default class Cli extends React.Component {
     let cmd = {}
     cmd['command'] = this.state.command
     cmd['result'] = 'Response'
-    
     let temp = this.state.results
     temp.unshift(cmd)
     
