@@ -5,9 +5,6 @@ import {
   Container, Header, Form, Feed
 } from 'semantic-ui-react'
 
-const user = 'ubuntu@root: '
-const extraText = "This is server response."
-
 export default class Cli extends React.Component {
   static propTypes = {
   };
@@ -17,18 +14,19 @@ export default class Cli extends React.Component {
     this.state = { command: '', results: [] }
   }
 
+  excuteCommand = (params) => {
+    // Push new command to array, in the first place.
+    let temp = this.state.results
+    temp.unshift(params)
+    this.setState({results: temp})
+  }
+
   handleChange = (e, { name, value }) => {
     this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
-    let cmd = {}
-    cmd['command'] = this.state.command
-    cmd['result'] = 'Response'
-    let temp = this.state.results
-    temp.unshift(cmd)
-    
-    this.setState({results: temp})
+    excuteCommand(this.state.command, this.excuteCommand)
     this.setState({ command: '' })
   }
 

@@ -1,11 +1,12 @@
 import axios from 'axios';
 const PATH = '/cli'
 
-export function excuteCommand(params = {}) {
-  let result = {}
-  axios.post(PATH)
+export function excuteCommand(param, callback) {
+  axios.post(PATH, {command: param})
   .then(res => {
-    result = res.data;
+    callback(res.data)
   })
-  return result
+  .catch(error => {
+    callback({command: param, result: error.message})
+  })
 }
