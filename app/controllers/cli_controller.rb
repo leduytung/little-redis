@@ -7,11 +7,7 @@ class CliController < ApplicationController
 
   def excute
     command = params["command"]
-    if command.present?
-      result = filter_command(command)
-    else
-      result = ""
-    end
+    result = command.present? ? filter_command(command) : ""
     render json: {command: command, result: result}, status: :ok
   end
 end
