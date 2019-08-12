@@ -7,6 +7,6 @@ export function excuteCommand(param, callback) {
     callback(res.data)
   })
   .catch(error => {
-    callback({command: param, result: error.message})
+    callback({command: param, result: `ERROR: ${error.message}` })
   })
 }

@@ -1,11 +1,14 @@
 class CliController < ApplicationController
   layout "cli"
+  include FilterCommand
+  
   def index
   end
+
   def excute
     command = params["command"]
     if command.present?
-      result = "REQUESTED"
+      result = filter_command(command)
     else
       result = ""
     end
