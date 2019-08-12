@@ -13,7 +13,6 @@ This project using Ruby on Rails for backend, and ReactJS for CLI UI frontend.
 * Rails 5.1 or above
 * react_on_rails 11.1 or above
 
-
 ## Support Function
 ### String
 * SET key value: set a string value, always overwriting what is  saved under key
@@ -41,9 +40,9 @@ This project using Ruby on Rails for backend, and ReactJS for CLI UI frontend.
 * TTL key: query the timeout of a key
 
 ### Snapshot:
-* SAVE: save the current state in a snapshot
+* SAVE: save the current state in a snapshot (System will snapshot data to file data_snapshot.yml)
 * RESTORE: restore from the last snapshot, 
-
+* System will snapshot and restore data from file data_snapshot.yml
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
