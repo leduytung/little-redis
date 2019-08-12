@@ -29,6 +29,7 @@ module DataStructure
       temp = @tail
       @tail = @tail.previous
       @tail.next = nil
+      @size -= 1
       return temp.to_s
     end
 
@@ -36,6 +37,7 @@ module DataStructure
     def lpop
       temp = @head
       @head = @head.next
+      @size -= 1
       return temp.to_s
     end
 
