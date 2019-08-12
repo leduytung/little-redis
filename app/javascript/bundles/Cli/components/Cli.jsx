@@ -34,7 +34,7 @@ export default class Cli extends React.Component {
     const { command } = this.state
     return (
       <div>
-        <Header as='h2' content='Dummy CLI for Dummy Ledis' style={{margin: '3em', }} textAlign='center' />
+        <Header as='h2' content='Little CLI for Ledis' style={{margin: '3em', }} textAlign='center' />
         <Container >
           <Form onSubmit={this.handleSubmit}>
             <Form.Input placeholder='Command' name='command' value={command} onChange={this.handleChange}>
